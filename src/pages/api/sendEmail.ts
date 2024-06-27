@@ -21,7 +21,7 @@ export default async function handler(
       service: 'gmail',
       auth: {
         user: ['kellypham@uwblueprint.org'],
-        pass: 'spnu pjuc zvxx subj',
+        pass: 'spnu pjuc zvxx subj', // app password
       },
     });
 

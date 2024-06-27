@@ -1,10 +1,12 @@
 // * eslint-disable prettier/prettier */
 import { useState } from 'react';
-import { Button, Container, Text } from '@chakra-ui/react';
+import { Button, Container, Input, Text, Textarea } from '@chakra-ui/react';
 
 const Email = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string>('');
+  let [emailText, setEmailText] = useState('');
+  let [emailRecipients, setEmailRecipients] = useState([]);
 
   const handleEmailSend = async () => {
     setLoading(true);
@@ -16,9 +18,9 @@ const Email = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          to: 'kellypham@uwblueprint.org',
+          to: emailRecipients,
           subject: 'Hello World',
-          text: 'It works!',
+          text: emailText,
         }),
       });
 
@@ -36,8 +38,26 @@ const Email = () => {
     }
   };
 
+  const handleEmailTextChange = (e) => {
+    setEmailText(e.target.value);
+  };
+
+  const handleEmailRecipientsChange = (e) => {
+    let recipientsString = e.target.value;
+    setEmailRecipients(recipientsString.split(','));
+  };
+
   return (
     <Container>
+      <Input
+        placeholder="Add recipients here"
+        onChange={handleEmailRecipientsChange}
+      ></Input>
+      <Textarea
+        placeholder="Write your email here"
+        value={emailText}
+        onChange={handleEmailTextChange}
+      ></Textarea>
       <Button
         onClick={handleEmailSend}
         isLoading={loading}
