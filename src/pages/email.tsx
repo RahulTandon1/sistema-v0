@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+// * eslint-disable prettier/prettier */
 import { useState } from 'react';
 import { Button, Container, Text } from '@chakra-ui/react';
 
@@ -16,7 +16,7 @@ const Email = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          to: 'jason.ling199@gmail.com',
+          to: 'kellypham@uwblueprint.org',
           subject: 'Hello World',
           text: 'It works!',
         }),
