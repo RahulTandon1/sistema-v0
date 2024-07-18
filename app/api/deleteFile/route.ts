@@ -1,5 +1,6 @@
 import { google } from 'googleapis';
 import { NextRequest, NextResponse } from 'next/server';
+export const runtime = 'edge'
 import { stringify } from 'querystring';
 
 export async function DELETE(req: NextRequest, res: NextResponse) {
