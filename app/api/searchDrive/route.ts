@@ -1,7 +1,7 @@
 import { google } from 'googleapis';
 import { NextRequest, NextResponse } from 'next/server';
 
-export const runtime = 'edge'
+export const runtime = 'experimental-edge'
 
 export async function GET(req: NextRequest, res: NextResponse) {
   const private_key = process.env.GDRIVE_PRIVATE_KEY.replace(/\\n/g, '\n');
