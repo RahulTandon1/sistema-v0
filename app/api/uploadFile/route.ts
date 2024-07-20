@@ -1,7 +1,7 @@
 import { google } from 'googleapis';
 import { NextRequest, NextResponse } from 'next/server';
 import { Readable } from 'node:stream';
-export const runtime = 'experimental-edge'
+// export const runtime = 'edge'
 
 export async function POST(req: NextRequest, res: NextResponse) {
   const formData = await req.formData();

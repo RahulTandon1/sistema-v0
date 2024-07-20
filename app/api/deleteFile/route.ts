@@ -1,8 +1,7 @@
 import { google } from 'googleapis';
 import { NextRequest, NextResponse } from 'next/server';
-import { stringify } from 'querystring';
 
-export const runtime = 'experimental-edge'
+// export const runtime = 'edge'
 
 export async function DELETE(req: NextRequest, res: NextResponse) {
   const { searchParams } = new URL(req.url);
